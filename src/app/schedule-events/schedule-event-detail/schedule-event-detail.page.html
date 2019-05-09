@@ -1,0 +1,46 @@
+<div style="background-color:#2fafa4" class="ui-grid-col-6">
+    <div class="ui-g-12">
+        <div  [formGroup]="scheduleEventForm" class="card card-w-title">
+            <h1 style="color: darkblue">Schedule Event Detail Page</h1>
+
+            <span class="ui-float-label">
+                <input formControlName="id" id="float-input" type="text" size="30" pInputText>
+                <label for="float-input">id</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input formControlName="title" id="float-input2" type="text" size="30" pInputText>
+                <label for="float-input2">title</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input formControlName="start" id="float-input3" type="text" size="30" pInputText>
+                <label for="float-input3">start</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input  formControlName="end" id="float-input4" type="text" size="30" pInputText>
+                <label for="float-input4">end</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+               <trg-event-autocomplete
+                   [innerFormControl]="scheduleEventForm.get('scheduleEvent')"
+                   [hideFloatLabel]="false">
+               </trg-event-autocomplete>
+            </span>
+
+            <br><br>
+            <span>
+                <button pButton (click)="submit()">Submit</button>
+            </span>
+
+        </div>
+    </div>
+
+
+</div>
+<br><br>
+<div>
+    <div>
+        <pre>{{scheduleEvent$|async|json}}</pre>
+    </div>
+</div>
+
+

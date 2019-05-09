@@ -1,0 +1,20 @@
+Kod Akaun
+
+<span class="md-inputfield">
+    <p-autoComplete #p
+                    id="accountCode"
+                    [formControl]="innerFormControl"
+                    [suggestions]="scheduleEvents"
+                    [forceSelection]="true"
+                    [delay]="500"
+                    [emptyMessage]="'Tiada Rekod'"
+                    (completeMethod)="search($event)"
+                    field="code">
+        <ng-template let-value pTemplate="item">
+            <span>{{value?.id}} - {{value?.title}}- {{value?.start}}</span>
+        </ng-template>
+        </p-autoComplete>
+<!--            <label for="accountCode" [hidden]="hideFloatLabel">Kod Akaun</label>-->
+
+
+</span>

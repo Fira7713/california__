@@ -1,0 +1,41 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="card card-w-title">
+            <h1>DataTable</h1>
+            <p-table [value]="(scheduleEvent$ | async)?.data"
+                     selectionMode="single">
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="background-color: #0C4B7F; color: white" *ngFor="let col of cols">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-scheduleEvent>
+                    <tr (click)="view(scheduleEvent)" [pSelectableRow]="scheduleEvent" >
+                        <td *ngFor="let col of cols">
+                            {{scheduleEvent[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<div *ngIf="selectedHero">-->
+
+<!--    <h2>{{selectedHero.name | uppercase}} Details</h2>-->
+<!--    <div><span>id: </span>{{selectedHero.id}}</div>-->
+<!--    <div>-->
+<!--        <label>name:-->
+<!--            <input [(ngModel)]="selectedHero.name" placeholder="name"/>-->
+<!--        </label>-->
+<!--    </div>-->
+
+<!--</div>-->

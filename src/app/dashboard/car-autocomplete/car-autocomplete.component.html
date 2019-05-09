@@ -1,0 +1,21 @@
+Kod Akaun
+
+<span class="md-inputfield">
+    <p-autoComplete #p
+                    id="accountCode"
+                    [formControl]="innerFormControl"
+                    [suggestions]="cars"
+                    [forceSelection]="true"
+                    [delay]="500"
+                    [emptyMessage]="'Tiada Rekod'"
+                    (completeMethod)="search($event)"
+                    (onClear)="innerFormControl.setValue(null)"
+                    field="code">
+        <ng-template let-value pTemplate="item">
+            <span>{{value?.vin}} - {{value?.brand}}</span>
+        </ng-template>
+        </p-autoComplete>
+<!--            <label for="accountCode" [hidden]="hideFloatLabel">Kod Akaun</label>-->
+
+
+</span>

@@ -1,0 +1,36 @@
+<div style="background-color:#2fafa4" class="ui-g">
+    <div class="ui-g-12">
+        <div  [formGroup]="carForm" class="card card-w-title">
+            <h1>Car Detail Page</h1>
+
+            <span class="ui-float-label">
+                <input formControlName="vin" id="float-input" type="text" size="30" pInputText>
+                <label for="float-input">vin</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input formControlName="brand" id="float-input2" type="text" size="30" pInputText>
+                <label for="float-input2">brand</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input formControlName="year" id="float-input3" type="text" size="30" pInputText>
+                <label for="float-input3">year</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+                <input  formControlName="color" id="float-input4" type="text" size="30" pInputText>
+                <label for="float-input4">Color</label>
+            </span><br/><br/>
+            <span class="ui-float-label">
+               <trg-car-autocomplete
+                   [innerFormControl]="carForm.get('car')"
+                   [hideFloatLabel]="false">
+               </trg-car-autocomplete>
+            </span>
+
+            <br><br>
+            <span>
+                <button pButton (click)="submit()">Submit</button>
+            </span>
+
+        </div>
+    </div>
+</div>
